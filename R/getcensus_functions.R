@@ -59,6 +59,8 @@ getFunction <- function(apiurl, key, get, region, regionin, time, date, period, 
 	}
 
 	# Assemble call
+	print("Sleep 3 seconds")
+	Sys.sleep(3)
 	req <- httr::GET(apiurl, query = list(key = key, get = get, "for" = region, "in" = regionin, category_code = category_code, data_type_code = data_type_code, time = time, DATE = date, PERIOD = period, MONTHLY = monthly, NAICS=naics, PSCODE=pscode, NAICS2012 = naics2012, NAICS2007 = naics2007, NAICS2002 = naics2002, NAICS1997 = naics1997, SIC = sic, ...))
 
 	# Check the API call for a valid response
